@@ -1,19 +1,57 @@
-console.log(1);
-let user = {};
-user.name = prompt("Введите ваше имя");
-while (! user.name) {
-    user.name = prompt("Так не пойдёт! Вы должны ввести ваше имя!")
-}
-user.surname = prompt("Введите вашу фамилию");
-user.age = prompt ("Введите ваш возраст"); 
-user.age = Number(user.age);
-while (isNaN(user.age) || (user.age===0)) {
-    user.age = prompt ("Нужно ввести число!")
-    user.age = Number(user.age);
+(function () {
+    let age;
+    function recursionAskNumber() {
+        age = prompt("Введите число больше 17");
+        if ! age > 18 {
+            recursionAskNumber();
+        } 
+    };
+
+})();
+
+(function () {
+    function recursionAskNumber() {
+        if ! prompt("Введите число больше 17") > 18 {
+            recursionAskNumber();
+        } 
+    };
+
+})();
+
+function myAdd (a,b) {
+    return a+b;
 }
 
-console.log (user);
-console.log("Имя: " + user.name);
-console.log("Фамилия: " + user.surname);
-console.log("Возраст: " + user.age);
-console.log(("b" + "a" + + "a" + "a").toLowerCase());
+unction mySubstract (a,b) {
+    return a-b;
+}
+
+unction myDivide (a,b) {
+    return a/b;
+}
+
+unction myMultiply (a,b) {
+    return a*b;
+}
+
+// эти функции чистые, потому что они не изменяют своё окружение
+// и при одинаковых вводных всегда дают соответствующий одинаковый результат
+
+function addCreator (){
+    return function ( start,step ) {
+        if ( step === undefined ) {
+            step = start;
+            };
+            return start + step;
+        }
+    
+}
+
+
+function counterCreator ( step = 2 ) {
+    let index = 0;
+    return function (){
+        index += step;
+        return index;
+    }
+}
