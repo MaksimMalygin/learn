@@ -22,15 +22,15 @@ function myAdd (a,b) {
     return a+b;
 }
 
-unction mySubstract (a,b) {
+function mySubstract (a,b) {
     return a-b;
 }
 
-unction myDivide (a,b) {
+function myDivide (a,b) {
     return a/b;
 }
 
-unction myMultiply (a,b) {
+function myMultiply (a,b) {
     return a*b;
 }
 
